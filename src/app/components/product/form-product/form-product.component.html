@@ -1,0 +1,57 @@
+
+
+<div class="container">
+  <h4>{{ productId ? 'Edit Product' : 'New Product' }}</h4>
+  <div class="border rounded p-4 mb-2 shadow">
+    <form class="form-group" [formGroup]="form" (ngSubmit)="onAdd()">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" class="form-control" formControlName="price">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" formControlName="description"></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Imagem</label>
+        <input type="text" class="form-control" formControlName="image" placeholder="URL da Imagem">
+      </div>
+      @if (productId != null) {
+        <button type="submit" class="btn btn-dark" (click)="onUpdate()">Update</button>
+      }
+      @else {
+        <button type="submit" class="btn btn-dark" (click)="onAdd()">Submit</button>
+      }
+    </form>
+  </div>
+</div>
+
+<!-- <h4>{{ productId ? 'Edit Product' : 'New Product' }}</h4>
+<form class="form-group" [formGroup]="form" (ngSubmit)="onAdd()">
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-control" formControlName="name" placeholder="{{ productId ? product.name : '' }}">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input type="number" class="form-control" formControlName="price" placeholder="{{ productId ? product.price : '' }}">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <textarea class="form-control" formControlName="description" placeholder="{{ productId ? product.description : '' }}"></textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Imagem</label>
+    <input type="text" class="form-control" formControlName="image" placeholder="{{ productId ? product.image : 'URL da Imagem' }}">
+  </div>
+  @if (productId != null) {
+    <button type="submit" class="btn btn-dark" (click)="onUpdate()">Update</button>
+  }
+  @else {
+    <button type="submit" class="btn btn-dark" (click)="onAdd()">Submit</button>
+  }
+</form> -->

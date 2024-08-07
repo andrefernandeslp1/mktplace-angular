@@ -1,0 +1,13 @@
+/* src/app/product/product.component.css */
+.container {
+  margin-top: 2rem;
+}
+
+.img-fluid {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

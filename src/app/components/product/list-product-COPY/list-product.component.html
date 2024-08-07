@@ -1,0 +1,44 @@
+
+<!-- <div class="container"> -->
+
+  <h3>Product List</h3>
+  <button type="button" class="btn btn-warning" routerLink="new">Add Product</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Image</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(product of products(); track product.id; let idx  = $index) {
+        <tr>
+          <th scope="row">{{ product.id }}</th>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <img src="{{ product.image }}" alt="{{ product.name }}" width="100" height="100">
+          </td>
+          <td>
+            <button class="btn btn-dark" type="button" (click)="addProductToCart(product)" >Add to Cart</button>
+            <i class="fa-solid fa-eye p-1" (click)="viewProduct(product.id)"></i>
+            <i class="fa-solid fa-pen p-1 text-warning" (click)="editProduct(product.id)"></i>
+            <i class="fa-solid fa-trash-can p-1 text-warning" (click)="onDelete(product.id)"></i>
+          </td>
+        </tr>
+      }
+      @empty {
+        <tr>
+          <td colspan="3">No products found</td>
+        </tr>
+      }
+
+    </tbody>
+  </table>
+<!-- </div> -->
+
+

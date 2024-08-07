@@ -1,0 +1,131 @@
+<!--
+      <h3 class="m-3">Purchases</h3>
+
+      <table class="table m-3">
+        <thead>
+          <tr>
+            <th scope="col">Purchase Id</th>
+            <th scope="col">Item Id</th>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(purchase of purchases; track purchase.id; let idx = $index) {
+            <tr>
+              <th scope="row">{{ purchase.id }}</th>
+              @for(item of purchase.items; track item.id; let idx = $index) {
+                <td>{{ item.id }}</td>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.product.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.product.price * item.quantity }}</td>
+              }
+              <td>
+                <button class="btn btn-danger" (click)="deletePurchase(purchase.id)">Delete</button>
+              </td>
+            </tr>
+          }
+          @empty {
+            <tr>
+              <td colspan="7">No purchases found</td>
+            </tr>
+          }
+        </tbody>
+      </table> -->
+
+      <h3 class="m-3">Purchases</h3>
+
+      <table class="table table-borderless m-3">
+        <thead>
+          <tr>
+            <th scope="col">Purchase Id</th>
+            <th scope="col">User Id</th>
+            <th scope="col">Item Id</th>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(purchase of purchases; track purchase.id; let idx0 = $index) {
+            @for(item of purchase.items; track item.id; let idx = $index) {
+              <tr>
+                @if (idx === 0) {
+                  <th scope="row" style="border-top: solid 1px lightgray">{{ purchase.id }}</th>
+                  <th style="border-top: solid 1px lightgray">{{ purchase.userId }}</th>
+                } @else {
+                  <th></th>
+                  <th></th>
+                }
+                <td style="{{ idx == 0 ? 'border-top:solid 1px lightgray' : '' }}" >{{ item.id }}</td>
+                <td style="{{ idx == 0 ? 'border-top:solid 1px lightgray' : '' }}" >{{ item.product.name }}</td>
+                <td style="{{ idx == 0 ? 'border-top:solid 1px lightgray' : '' }}" >{{ item.product.price }}</td>
+                <td style="{{ idx == 0 ? 'border-top:solid 1px lightgray' : '' }}" >{{ item.quantity }}</td>
+                <td style="{{ idx == 0 ? 'border-top:solid 1px lightgray' : '' }}" >{{ item.product.price * item.quantity }}</td>
+                @if (idx === 0) {
+                  <td style="{{ idx == 0 ? 'border-top:solid 1px lightgray' : '' }}" >
+                    <i class="fa-solid fa-trash-can p-1"
+                        [ngClass]="hoverStates[idx0] ? 'text-danger' : 'text-secondary'"
+                        (click)="deletePurchase(purchase.id)"
+                        (mouseenter)="onMouseEnter(idx0)"
+                        (mouseleave)="onMouseLeave(idx0)"
+                        style="cursor:pointer;">
+                    </i>
+                  </td>
+                } @else {
+                  <td></td>
+                }
+              </tr>
+            }
+          }
+          @empty {
+            <tr>
+              <td colspan="7" style="border-top:solid 1px lightgray" >No purchases found</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+
+
+  <!-- <h4>Purchases</h4>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Purchase Id</th>
+        <th scope="col">Item Id</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(purchase of purchases; track purchase.id; let idx = $index) {
+        <tr>
+          <th scope="row">{{ purchase.id }}</th>
+          @for(item of purchase.items; track item.id; let idx = $index) {
+            <td>{{ item.id }}</td>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.product.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.price * item.quantity }}</td>
+          }
+        </tr>
+      }
+      @empty {
+        <tr>
+          <td colspan="3">No users found</td>
+        </tr>
+      }
+    </tbody>
+  </table> -->
+
+

@@ -1,0 +1,33 @@
+
+<!-- <div class="container"> -->
+
+<!-- </div> -->
+<!-- src/app/product-list/product-list.component.html -->
+  <div class="m-3" style="display:flex; direction:row; justify-content: space-between;">
+    <h3>Product List</h3>
+    <button type="button" class="btn btn-warning" routerLink="new">Add Product</button>
+  </div>
+
+  <main class="card-deck p-3">
+    @for(product of products(); track product.id; let idx  = $index) {
+
+      <div class="card" style="width: 18rem;">
+        <img [src]="product.image" class="card-img-top" style="cursor:pointer;" alt="{{product.name}}" (click)="viewProduct(product.id)">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <!-- <p class="card-text">{{ product.description }}</p> -->
+          <p class="card-text"><strong>Price: </strong>{{ product.price | currency }}</p>
+          <button class="btn btn-dark text-white" type="button" (click)="addProductToCart(product)">Add to Cart</button>
+          <i class="fa-solid fa-eye p-1" (click)="viewProduct(product.id)"></i>
+          <i class="fa-solid fa-pen p-1 text-warning" (click)="editProduct(product.id)"></i>
+          <i class="fa-solid fa-trash-can p-1 text-warning" (click)="onDelete(product.id)"></i>
+        </div>
+      </div>
+
+    }
+    @empty {
+        <p>No products found</p>
+    }
+  </main>
+
+

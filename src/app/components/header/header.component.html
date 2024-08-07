@@ -1,0 +1,54 @@
+
+<!-- <div class="container"> -->
+  <!-- <p>header works!</p> -->
+  <div class="header p-3">
+    <div class="row d-flex align-items-center">
+      <img class="col shadow" src="assets/qcvc-high-resolution-logo-transparent-5.png" [routerLink]="home()" alt="logo" style="cursor:pointer;" height="60" width="100" >
+      <!-- <div class="col">
+        <h5>Qualquer Coisa</h5>
+        <h4>Vinte Conto</h4>
+      </div> -->
+    </div>
+
+    <div style="display:flex; direction:row;">
+      <app-menu></app-menu>
+        <!-- <i class="fa-solid fa-cart-shopping" routerLink="/home/cart"
+          [class]="isSelected('/home/cart')? 'selected' : ''"
+          style="margin:auto; font-size:26px;"></i> -->
+        <!-- <i class="material-icons">shopping_cart</i> Add to Cart -->
+        <span class="material-symbols-outlined" routerLink="/home/cart"
+          [class]="isSelected('/home/cart')? 'selected' : ''"
+          style="margin:auto; font-size:33px; cursor:pointer;">shopping_cart</span>
+        <!-- <span style="margin:auto;">CART</span> -->
+    </div>
+
+
+    <div class="user">
+      @if(user().email == undefined || user().email == '') {
+        <p routerLink="/landing" style="cursor:pointer;">Faça Login!</p>
+      }
+      @else {
+        <h6>Welcome, {{ user().username }}</h6>
+      }
+      <div style="float:right">
+        <!-- <i class="fa-solid fa-cart-shopping p-1 mr-2" routerLink="/home/cart"
+          [class]="isSelected('/home/cart')? 'selected' : ''"
+          style="font-size:26px;"></i> -->
+
+        <!-- <i class="fa-solid fa-cart-shopping mr-2" routerLink="/home/cart"
+          [class]="isSelected('/home/cart')? 'selected' : ''"
+          style="font-size:26px; margin-right:20px;"
+          ></i> -->
+
+        <i class="fa-solid fa-eye p-1" (click)="viewUser()"
+          [class]="isSelected('/home/user/'+user().id)? 'selected' : ''"></i>
+        <i class="fa-solid fa-pen p-1" (click)="editUser()"
+          [class]="isSelected('/home/user/'+user().id+'/edit')? 'selected' : ''"></i>
+        <i class="fa-solid fa-right-from-bracket p-1" (click)="onExit()"></i>
+      </div>
+
+    </div>
+  </div>
+<!-- </div> -->
+
+

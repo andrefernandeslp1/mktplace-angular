@@ -1,0 +1,234 @@
+{
+  "addresses": [
+    {
+      "id": 1,
+      "street": "123 Main St",
+      "city": "Anytown",
+      "country": "USA"
+    },
+    {
+      "id": 2,
+      "street": "456 Elm St",
+      "city": "Othertown",
+      "country": "Canada"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$WZRjUrPz4zmpUL0.3ID0reUpWmbUb.QHklaoc7XANXlNmYQgVVD.u",
+      "roles": [
+        {
+          "id": 1,
+          "name": "admin"
+        },
+        {
+          "id": 2,
+          "name": "client"
+        },
+        {
+          "id": 3,
+          "name": "seller"
+        }
+      ],
+      "address": {
+        "street": null,
+        "city": null,
+        "country": null
+      },
+      "image": "http://w3schools.com/w3images/avatar3.png"
+    },
+    {
+      "email": "seller@gmail.com",
+      "password": "$2a$10$JSPQ8NKfh3n88FWYRmEXTeBQSxjThdF4bTTvYeZitb.IrsWp54QOq",
+      "username": "Seller",
+      "roles": [
+        {
+          "id": 3,
+          "name": "seller"
+        }
+      ],
+      "address": {
+        "street": null,
+        "city": null,
+        "country": null
+      },
+      "image": "http://w3schools.com/w3images/avatar3.png",
+      "id": 2
+    },
+    {
+      "email": "client@gmail.com",
+      "password": "$2a$10$2cVl6dQagPxqAk5iUdC58O8KgnFo0.IaicfJB/ujFWEt.ZG1NfsDe",
+      "username": "Client",
+      "roles": [
+        {
+          "id": 2,
+          "name": "client"
+        }
+      ],
+      "address": {
+        "street": null,
+        "city": null,
+        "country": null
+      },
+      "image": "http://w3schools.com/w3images/avatar3.png",
+      "id": 3
+    },
+    {
+      "email": "teste@gmail.com",
+      "password": "$2a$10$ZWICZFzAHts.s40SZhx7T.hQZoiM6MkV53C13T4YpvJqa55DWpLAS",
+      "username": "Teste",
+      "roles": [
+        {
+          "id": 1,
+          "name": "admin"
+        },
+        {
+          "id": 3,
+          "name": "seller"
+        }
+      ],
+      "address": {
+        "street": null,
+        "city": null,
+        "country": null
+      },
+      "image": "http://w3schools.com/w3images/avatar6.png",
+      "id": 4
+    }
+  ],
+  "purchases": [
+    {
+      "id": 1,
+      "userId": "3",
+      "items": [
+        {
+          "product": {
+            "name": "Sabão",
+            "price": 100,
+            "description": "Sabão líquido",
+            "image": "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL3BmLXMxMDgtcG0tNDExMy1tb2NrdXAuanBn.jpg",
+            "id": 1
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "userId": "3",
+      "items": [
+        {
+          "product": {
+            "name": "Batom",
+            "price": 100,
+            "description": "Batom Vermelho",
+            "image": "https://b2861582.smushcdn.com/2861582/wp-content/uploads/2023/02/splash-03-605-v1.png?lossy=2&strip=1&webp=1",
+            "id": 4
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "userId": "3",
+      "items": [
+        {
+          "product": {
+            "name": "Sapato",
+            "price": 300,
+            "description": "Sapato de couro",
+            "image": "https://www.ingenstudio.com/blog/wp-content/uploads/2016/08/eCommerce-Product-Photography-Tips.jpg",
+            "id": 3
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "name": "Batom",
+            "price": 100,
+            "description": "Batom Vermelho",
+            "image": "https://b2861582.smushcdn.com/2861582/wp-content/uploads/2023/02/splash-03-605-v1.png?lossy=2&strip=1&webp=1",
+            "id": 4
+          },
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "items": [
+        {
+          "product": {
+            "name": "Batom",
+            "price": 100,
+            "description": "Batom Vermelho",
+            "image": "https://b2861582.smushcdn.com/2861582/wp-content/uploads/2023/02/splash-03-605-v1.png?lossy=2&strip=1&webp=1",
+            "id": 4
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "userId": "1",
+      "items": [
+        {
+          "product": {
+            "name": "Batom",
+            "price": 100,
+            "description": "Batom Vermelho",
+            "image": "https://b2861582.smushcdn.com/2861582/wp-content/uploads/2023/02/splash-03-605-v1.png?lossy=2&strip=1&webp=1",
+            "id": 4
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "name": "Sapato",
+            "price": 300,
+            "description": "Sapato de couro",
+            "image": "https://www.ingenstudio.com/blog/wp-content/uploads/2016/08/eCommerce-Product-Photography-Tips.jpg",
+            "id": 3
+          },
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "name": "Sabão",
+      "price": 100,
+      "description": "Sabão líquido",
+      "image": "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL3BmLXMxMDgtcG0tNDExMy1tb2NrdXAuanBn.jpg",
+      "id": 1
+    },
+    {
+      "name": "Sapato",
+      "price": 300,
+      "description": "Sapato de couro",
+      "image": "https://www.ingenstudio.com/blog/wp-content/uploads/2016/08/eCommerce-Product-Photography-Tips.jpg",
+      "id": 3
+    },
+    {
+      "name": "Batom",
+      "price": 100,
+      "description": "Batom Vermelho",
+      "image": "https://b2861582.smushcdn.com/2861582/wp-content/uploads/2023/02/splash-03-605-v1.png?lossy=2&strip=1&webp=1",
+      "id": 4
+    },
+    {
+      "name": "Câmera",
+      "price": 1000,
+      "description": "Câmera fotográfica profissional.",
+      "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-madebymath-90946.jpg&fm=jpg",
+      "id": 5
+    }
+  ]
+}

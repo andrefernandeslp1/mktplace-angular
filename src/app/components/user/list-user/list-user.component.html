@@ -1,0 +1,49 @@
+<!-- <p>list-user works!</p> -->
+  <div class="m-3" style="display:flex; direction:row; justify-content: space-between;">
+    <h3>User List</h3>
+    <button type="button" class="btn btn-danger" routerLink="new">Add User</button>
+  </div>
+
+
+  <table class="table m-3">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(user of users(); track user.id; let idx  = $index) {
+        <tr>
+          <th scope="row">{{ user.id }}</th>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            @for(role of user.roles; track role; let idx = $index) {
+              @if(role.name == 'admin') {
+                <span class="badge bg-danger" style="margin:1px; width:55px;">{{ role.name }}</span>
+              } @if(role.name == 'seller') {
+                <span class="badge bg-warning" style="margin:1px; width:55px;">{{ role.name }}</span>
+              } @if(role.name == 'client') {
+                <span class="badge bg-dark" style="margin:1px; width:55px;">{{ role.name }}</span>
+              }
+            }
+          </td>
+          <td>
+            <i class="fa-solid fa-eye p-1 text-danger" style="cursor:pointer;" routerLink="{{user.id}}"></i>
+            <i class="fa-solid fa-pen p-1 text-danger" style="cursor:pointer;" routerLink="{{user.id}}/edit"></i>
+            <i class="fa-solid fa-trash-can p-1 text-danger" style="cursor:pointer;" (click)="onDelete(user.id)"></i>
+          </td>
+        </tr>
+      }
+      @empty {
+        <tr>
+          <td colspan="3">No users found</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
